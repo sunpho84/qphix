@@ -78,7 +78,7 @@ inline void *aligned_malloc(int size, int alignment)
 }
 };
 
-#ifdef __MIC__
+#if defined __MIC__ || defined USE_HUGE_PAGES
 
 // MIC BUFFERS are HUGE PAGES
 #include <fcntl.h>
