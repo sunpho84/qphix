@@ -93,6 +93,7 @@ inline void *BUFFER_MALLOC(size_t size, int alignment)
   if (size % HUGE_PAGE_SIZE != 0) {
     n_pages++;
   }
+  QPhiX::localPrintf("Allocating %d hugepages\n",n_pages);
 
   void *ret_val = mmap(NULL,
                        size,
